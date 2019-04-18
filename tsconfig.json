@@ -1,23 +1,26 @@
 {
-    "compilerOptions": {
-        "moduleResolution": "node",
-        "target": "es5",
-        "outDir": "./dist",
-        "sourceMap": true,
-        "declaration": true,
-        "skipLibCheck": true,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "allowSyntheticDefaultImports": true,
-        "lib": [
-            "es2017",
-            "esnext.asynciterable",
-            "dom"
-        ]
-    },
-    "baseUrl": "./"
+  "compilerOptions": {
+    "strict": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "es2017",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": [
+    "src"
+  ]
 }
