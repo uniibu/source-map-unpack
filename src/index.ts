@@ -57,7 +57,10 @@ if (cluster.isMaster) {
         let tasks: Tasks[] = []
         let taskWorker: TasksWorker[] = [];
         const WEBPACK_SUBSTRING_INDEX = 11
-
+        const bar = new ProgressBar({
+          schema: ' [:filled.green:blank] :current/:total :percent.cyan :elapseds :etas',
+          total: sources.length
+        })
         for (const source of sources) {
           const content = consumer.sourceContentFor(source)
           const filePath = `${process.cwd()}/${projectNameInput}/${source.substring(WEBPACK_SUBSTRING_INDEX)}`
@@ -75,10 +78,7 @@ if (cluster.isMaster) {
         let taskParts = 0;
         let workerNum = 0;
         const loop = () => {
-          const bar = new ProgressBar({
-            schema: ' [:filled.green:blank] :current/:total :percent.cyan :elapseds :etas',
-            total: numCPUs
-          })
+
           for (let i = 0; i < numCPUs; i++) {
             workerNum++;
             const worker = cluster.fork(tasks[taskParts][i]);
@@ -97,8 +97,7 @@ if (cluster.isMaster) {
                 taskParts++
                 if (taskParts === tasks.length) {
                   console.log(chalk.green('🎉  All done! Enjoy exploring your code 💻'))
-                  bar.
-                    process.exit();
+                  process.exit();
                 } else {
                   process.nextTick(loop);
                 }

@@ -1,9 +1,9 @@
 {
-  "name": "@unibtc/source-map-unpack",
+  "name": "@unibtc/better-source-map-unpack",
   "version": "1.0.0",
-  "description": "Unpack 🛍  your JS source maps 🗺  to original files and folders.",
+  "description": "Unpack 🛍  your JS source maps 🗺  to original files and folders fast with clustering!.",
   "main": "dist/index.js",
-  "author": "Pavlo Kochubei",
+  "author": "unibtc@gmail.com",
   "license": "MIT",
   "private": false,
   "repository": {
